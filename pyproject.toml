@@ -1,0 +1,19 @@
+# Thin test environment for the Copier templates: the three template test
+# suites are self-contained (stdlib + PyYAML readers over templates/**), so
+# this repo needs no Django and no framework install.
+[project]
+name = "angee-templates"
+version = "0.0.0"
+requires-python = ">=3.14"
+dependencies = []
+
+[dependency-groups]
+dev = ["pytest>=8.3", "pyyaml>=6.0"]
+
+[tool.uv]
+# Not a distributable package — just the test environment for the templates.
+package = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra --strict-markers --import-mode=importlib"

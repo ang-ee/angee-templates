@@ -1,0 +1,9 @@
+# Stack answers rendered beside a template consumer during local test renders.
+# The stack templates' contract tests assert this exact ignore line.
+/.copier-answers.stack.yml
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/

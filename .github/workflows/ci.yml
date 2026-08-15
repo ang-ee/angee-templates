@@ -1,0 +1,16 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    uses: ang-ee/angee-django/.github/workflows/reusable-checks.yml@main
+    with:
+      python-version: "3.14"
+      # Pure-Python template contract tests — no JS, no composed stack needed.
+      pnpm-enabled: false
